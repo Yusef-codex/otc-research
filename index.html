@@ -1184,4 +1184,155 @@
                     </div>
                 </section>
             </main>
-  
+           </div>
+        
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    OTC-RESEARCH v1.0
+                </div>
+                
+                <div class="footer-credits">
+                    <p><strong>التحليل الشامل للأدوية التي تُصرف بدون وصفة طبية (OTC)</strong></p>
+                    <p>إعداد وتصميم: <a href="https://www.facebook.com/joseph200000000" style="color: #bdc3c7; text-decoration: underline; text-underline-offset: 3px;">يوسف محمد</a></p>
+                    <p>© جميع الحقوق محفوظة ٢٠٢٥ - بحث أكاديمي</p>
+                </div>
+                
+                <div class="footer-dedication">
+                    <p style="font-size: 18px; margin-bottom: 10px;">
+                        <i class="fas fa-heart" style="color: #e74c3c;"></i>
+                        <strong>هذا العمل صدقة جارية</strong>
+                    </p>
+                    <p>نسألكم الدعاء لأمي ووالدي بالرحمة والمغفرة والجنة</p>
+                    <p style="margin-top: 10px; font-style: italic;">"رب ارحمهما كما ربياني صغيراً"</p>
+                    <p style="margin-top: 15px;">وأن يجعل الله هذا العمل في ميزان حسناتهما وحسنات كل من ساهم في إعداده ونشره.</p>
+                </div>
+                
+                <div class="footer-note">
+                    <p>
+                        <i class="fas fa-lock"></i>
+                        هذا المستند معد للاستخدام الأكاديمي والتعليمي، ويتطلب الوعي الكامل بمحتواه.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        <i class="fas fa-sync-alt"></i>
+                        آخر تحديث: ديسمبر ٢٠٢٥ | الإصدار: 1.0 البحثي
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // تحديث التاريخ الحالي
+        const now = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = now.toLocaleDateString('ar-EG', options);
+        document.getElementById('currentDate').textContent = dateString;
+        
+        // التنقل بين الأقسام
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // إزالة النشط من جميع الروابط
+                document.querySelectorAll('.nav-link').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // إضافة النشط للرابط المختار
+                this.classList.add('active');
+                
+                // التمرير إلى القسم المطلوب
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if(targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // اختبار التفاعلي (Updated for OTC content)
+        function checkAnswer(questionNum) {
+            const resultDiv = document.getElementById('quizResult');
+            let answer = '';
+            
+            switch(questionNum) {
+                case 1:
+                    answer = `
+                        <h4 style="color: #3498db; margin-bottom: 10px;"><i class="fas fa-balance-scale"></i> الإجابة على سؤال معايير OTC:</h4>
+                        <p>من أهم المعايير: <strong>هامش الأمان الواسع، سهولة التشخيص الذاتي، وضعف احتمالية سوء الاستخدام</strong>.</p>
+                        <p style="margin-top: 10px; color: #27ae60;"><i class="fas fa-check-circle"></i> تذكر: الوضوح الكامل للملصق شرط أساسي!</p>
+                    `;
+                    break;
+                case 2:
+                    answer = `
+                        <h4 style="color: #e74c3c; margin-bottom: 10px;"><i class="fas fa-radiation-alt"></i> الإجابة على سؤال تسمم الكبد:</h4>
+                        <p>السبب الرئيسي لتسمم الكبد الحاد هو: <strong>تجاوز الجرعة اليومية القصوى من الأسيتامينوفين (Paracetamol)</strong>، وغالباً ما يحدث بسبب الجرعة المزدوجة.</p>
+                        <p style="margin-top: 10px; color: #e74c3c;"><i class="fas fa-exclamation-triangle"></i> يجب عدم تجاوز 4000 mg يومياً للبالغين الأصحاء!</p>
+                    `;
+                    break;
+                case 3:
+                    answer = `
+                        <h4 style="color: #27ae60; margin-bottom: 10px;"><i class="fas fa-triangle-exclamation"></i> الإجابة على سؤال إشارات الخطر:</h4>
+                        <p>إذا استمرت الحمى لأكثر من 3 أيام، أو الألم لأكثر من 10 أيام، أو ظهر دم في القيء/البراز، فهذه <strong>إشارات خطر</strong> تستدعي الإحالة الفورية للطبيب.</p>
+                        <p style="margin-top: 10px; color: #3498db;"><i class="fas fa-lightbulb"></i> نصيحة: الدور الصيدلي يركز على الكشف عن هذه الإشارات (Red Flags).</p>
+                    `;
+                    break;
+            }
+            
+            resultDiv.innerHTML = answer;
+            resultDiv.style.display = 'block';
+            
+            // التمرير إلى النتيجة
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // تأثيرات عند التمرير (Kept)
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if(pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // تأثيرات مرئية إضافية (Kept)
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // طباعة المستند (Kept)
+        document.querySelector('a[href="#"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            if(this.innerHTML.includes('طباعة')) {
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>
