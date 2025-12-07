@@ -1,257 +1,1187 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>التحليل الشامل لأدوية OTC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Cairo', sans-serif;
-    }
-
-    :root {
-      --primary: #2c3e50;
-      --secondary: #3498db;
-      --accent: #e74c3c;
-      --success: #27ae60;
-      --warning: #f39c12;
-      --danger: #c0392b;
-      --light: #ecf0f1;
-      --dark: #2c3e50;
-      --gray: #95a5a6;
-    }
-
-    body {
-      background: #f5f7fa;
-      padding: 15px;
-    }
-
-    .master-container {
-      max-width: 1300px;
-      margin: auto;
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-
-    .hero-header {
-      background: #2c3e50;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    .main-title {
-      font-size: 28px;
-      margin: 10px 0;
-    }
-
-    .subtitle {
-      font-size: 16px;
-      color: #ddd;
-    }
-
-    .meta-info {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .content-wrapper {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-    }
-
-    .sidebar {
-      background: #1a252f;
-      color: white;
-      padding: 20px;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .nav-link {
-      color: #ddd;
-      text-decoration: none;
-      background: rgba(255,255,255,0.05);
-      padding: 10px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-link:hover {
-      background: rgba(255,255,255,0.1);
-      color: white;
-    }
-
-    .main-content {
-      padding: 20px;
-      background: #f9fbfd;
-    }
-
-    .section {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.03);
-    }
-
-    /* ✅ الجداول المعدلة للموبايل */
-    .responsive-table {
-      overflow-x: auto;
-      margin-top: 15px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 100%;
-    }
-
-    th, td {
-      padding: 12px;
-      text-align: right;
-      font-size: 14px;
-    }
-
-    th {
-      background: var(--secondary);
-      color: white;
-    }
-
-    tr:nth-child(even) {
-      background: #f5f5f5;
-    }
-
-    /* ✅ تحسين الموبايل */
-    @media (max-width: 768px) {
-      .content-wrapper {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        padding: 10px;
-      }
-
-      .nav-menu {
-        flex-direction: row;
-        overflow-x: auto;
-        gap: 8px;
-      }
-
-      .nav-link {
-        min-width: 200px;
-        font-size: 13px;
-      }
-
-      .main-title {
-        font-size: 22px;
-      }
-
-      th, td {
-        font-size: 13px;
-      }
-    }
-
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 بحث أكاديمي: التحليل الشامل للأدوية التي تُصرف بدون وصفة طبية (OTC)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --danger: #c0392b;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(52, 152, 219, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(231, 76, 60, 0.05) 0%, transparent 20%);
+            z-index: -1;
+        }
+        
+        /* ===== MAIN CONTAINER ===== */
+        .master-container {
+            max-width: 1400px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.1),
+                0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .master-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--success) 50%, var(--warning) 100%);
+        }
+        
+        /* ===== HEADER ===== */
+        .hero-header {
+            background: linear-gradient(rgba(44, 62, 80, 0.95), rgba(44, 62, 80, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%233498db" opacity="0.1" d="M0,0 L100,0 L100,100 Z"/></svg>');
+            background-size: cover;
+            padding: 50px 60px 40px;
+            color: white;
+            position: relative;
+            text-align: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+        
+        .main-title {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .main-title i {
+            color: var(--warning);
+            margin-left: 15px;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: var(--light);
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            margin-top: 30px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .meta-item i {
+            color: var(--warning);
+            font-size: 20px;
+        }
+        
+        .danger-note {
+            /* Modified to be an Academic Note */
+            background: rgba(52, 152, 219, 0.15); /* light blue */
+            border-right: 5px solid var(--secondary);
+            padding: 18px 25px;
+            border-radius: var(--radius);
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: none; /* Removed pulse animation */
+        }
+        
+        .danger-note i {
+            color: var(--secondary);
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+        }
+        
+        /* ===== MAIN CONTENT ===== */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 1000px;
+        }
+        
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            background: linear-gradient(180deg, var(--primary) 0%, #1a252f 100%);
+            padding: 40px 25px;
+            color: white;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .sidebar-title {
+            font-size: 22px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--light);
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(52, 152, 219, 0.3);
+        }
+        
+        .nav-menu {
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-bottom: 12px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 16px 20px;
+            color: #bdc3c7;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: rgba(52, 152, 219, 0.2);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        .nav-link:hover::before, .nav-link.active::before {
+            width: 5px;
+            background: var(--secondary);
+        }
+        
+        .nav-link i {
+            font-size: 18px;
+            width: 25px;
+            text-align: center;
+        }
+        
+        .nav-number {
+            background: rgba(255, 255, 255, 0.1);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        /* ===== CONTENT SECTIONS ===== */
+        .main-content {
+            padding: 50px 60px;
+            background: #f9fbfd;
+        }
+        
+        .section {
+            background: white;
+            border-radius: var(--radius);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--section-color, var(--secondary));
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .section-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--section-color, var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .section-title {
+            font-size: 28px;
+            color: var(--section-color, var(--secondary));
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        
+        /* ===== TABLES ===== */
+        .responsive-table {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            min-width: 800px;
+        }
+        
+        thead {
+            background: linear-gradient(90deg, var(--section-color, var(--secondary)), var(--section-color, var(--secondary)));
+        }
+        
+        th {
+            padding: 22px 20px;
+            text-align: right;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            position: relative;
+        }
+        
+        th:first-child {
+            border-top-right-radius: 10px;
+        }
+        
+        th:last-child {
+            border-top-left-radius: 10px;
+        }
+        
+        td {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            transition: var(--transition);
+        }
+        
+        tr {
+            transition: var(--transition);
+        }
+        
+        tr:hover {
+            background: #f8fafc;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+        
+        tr:last-child td:first-child {
+            border-bottom-right-radius: 10px;
+        }
+        
+        tr:last-child td:last-child {
+            border-bottom-left-radius: 10px;
+        }
+        
+        /* ===== CARDS ===== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--card-color, var(--secondary));
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-icon {
+            font-size: 36px;
+            color: var(--card-color, var(--secondary));
+            margin-bottom: 20px;
+        }
+        
+        .card-title {
+            font-size: 20px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        /* ===== SPECIAL BOXES ===== */
+        .info-box {
+            background: linear-gradient(135deg, #e8f4fc 0%, #f0f9ff 100%);
+            border-right: 5px solid var(--secondary);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin: 25px 0;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fff8e6 0%, #fffbf0 100%);
+            border-right: 5px solid var(--warning);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin: 25px 0;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .danger-box {
+            background: linear-gradient(135deg, #ffeded 0%, #fff5f5 100%);
+            border-right: 5px solid var(--danger);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin: 25px 0;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .box-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        
+        /* ===== CHECKLISTS (Used for Conclusion/Summary) ===== */
+        .checklist {
+            background: #f8fff9;
+            border: 2px solid var(--success);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .checklist-title {
+            color: var(--success);
+            font-size: 22px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .checklist-item:hover {
+            background: #f0fff4;
+            transform: translateX(-5px);
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            accent-color: var(--success);
+            flex-shrink: 0;
+        }
+        
+        /* ===== PROGRESS BAR ===== */
+        .progress-container {
+            margin: 40px 0;
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .progress-bar {
+            height: 12px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary), var(--success));
+            border-radius: 10px;
+            width: 75%; /* Adjusted progress */
+            transition: width 1s ease;
+        }
+        
+        /* ===== FOOTER ===== */
+        .main-footer {
+            background: linear-gradient(180deg, var(--primary) 0%, #1a252f 100%);
+            color: white;
+            padding: 50px 60px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--light);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .footer-credits {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #bdc3c7;
+        }
+        
+        .footer-dedication {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin-top: 30px;
+            border-right: 3px solid var(--warning);
+        }
+        
+        .footer-note {
+            font-size: 16px;
+            color: #95a5a6;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* ===== PRINT STYLES (Kept) ===== */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .sidebar, .no-print {
+                display: none;
+            }
+            
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .master-container {
+                box-shadow: none;
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .hero-header {
+                background: #2c3e50 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .section {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            tr {
+                break-inside: avoid;
+            }
+        }
+        
+        /* ===== RESPONSIVE (Kept) ===== */
+        @media (max-width: 1200px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                height: auto;
+                position: static;
+            }
+            
+            .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .nav-item {
+                flex: 1;
+                min-width: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-header, .main-content, .main-footer {
+                padding: 30px;
+            }
+            
+            .main-title {
+                font-size: 32px;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .meta-info {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="master-container">
-  <header class="hero-header">
-    <h1 class="main-title">التحليل الشامل للأدوية التي تُصرف بدون وصفة طبية (OTC)</h1>
-    <p class="subtitle">موقع توعوي تعليمي عن الأدوية</p>
-
-    <div class="meta-info">
-      <div>إعداد: يوسف محمد</div>
-      <div id="currentDate"></div>
-    </div>
-  </header>
-
-  <div class="content-wrapper">
-    <aside class="sidebar">
-      <ul class="nav-menu">
-        <li><a href="#section1" class="nav-link">الإطار المفاهيمي</a></li>
-        <li><a href="#section2" class="nav-link">التنظيم والرقابة</a></li>
-        <li><a href="#section3" class="nav-link">التحليل السريري</a></li>
-      </ul>
-    </aside>
-
-    <main class="main-content">
-
-      <section id="section1" class="section">
-        <h2>الإطار المفاهيمي</h2>
-        <p>تعريف شامل لأدوية OTC وأهميتها.</p>
-
-        <div class="responsive-table">
-          <table>
-            <thead>
-              <tr>
-                <th>المفهوم</th>
-                <th>الوصف</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>سهولة الوصول</td>
-                <td>تُباع بدون وصفة طبية</td>
-              </tr>
-              <tr>
-                <td>الأمان</td>
-                <td>هامش أمان مرتفع</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="section2" class="section">
-        <h2>التنظيم والرقابة</h2>
-        <p>المعايير التي يتم بها تصنيف الدواء.</p>
-      </section>
-
-      <section id="section3" class="section">
-        <h2>التحليل السريري</h2>
-        <p>ربط الأعراض بالفئات الدوائية.</p>
-      </section>
-
-    </main>
-  </div>
-
-  <footer>
-    © 2025 – موقع OTC التعليمي
-  </footer>
-</div>
-
-<script>
-  const now = new Date();
-  document.getElementById("currentDate").innerText =
-    now.toLocaleDateString('ar-EG');
-</script>
-
-</body>
-</html>
+    <div class="master-container">
+        <header class="hero-header">
+            <div class="badge">
+                <i class="fas fa-pills"></i> دراسة متعمقة: علم الأدوية
+            </div>
+            
+            <h1 class="main-title">
+                <i class="fas fa-pills"></i>
+                التحليل الشامل للأدوية التي تُصرف بدون وصفة طبية (OTC)
+            </h1>
+            
+            <p class="subtitle">
+                دراسة معمقة للمفاهيم التنظيمية، المعايير القانونية، الآليات السريرية، وإشارات الخطر لاستخدامات العلاج الذاتي.
+            </p>
+            
+            <div class="meta-info">
+                <div class="meta-item">
+                    <i class="fas fa-user-tie"></i>
+                    <div>
+                        <div style="font-weight: bold;">المُعد</div>
+                        <div><a href="https://www.facebook.com/joseph200000000" style="color: white; text-decoration: underline; text-underline-offset: 3px;">يوسف محمد</a></div>
+                    </div>
+                </div>
+                
+                <div class="meta-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div>
+                        <div style="font-weight: bold;">تاريخ الإصدار</div>
+                        <div id="currentDate">٥ ديسمبر ٢٠٢٥</div>
+                    </div>
+                </div>
+                
+                <div class="meta-item">
+                    <i class="fas fa-flask"></i>
+                    <div>
+                        <div style="font-weight: bold;">الإصدار</div>
+                        <div>v1.0 - بحث الأدوية (OTC)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="danger-note" style="border-right: 5px solid var(--secondary); background: rgba(52, 152, 219, 0.15); animation: none; color: white;">
+                <i class="fas fa-graduation-cap" style="font-size: 28px; color: var(--secondary);"></i>
+                <div>
+                    <strong>إشعار أكاديمي:</strong> هذا المحتوى هو نتاج <strong>بحث أكاديمي مُفصَّل</strong> في العديد من المصادر والمراجع الصيدلانية الدولية والمحلية الموثوقة على شبكة الإنترنت.
+                </div>
+            </div>
+        </header>
+        
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <h2 class="sidebar-title">
+                    <i class="fas fa-stream"></i>
+                    الفهرس التفاعلي
+                </h2>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#section1" class="nav-link active">
+                            <div class="nav-number">1</div>
+                            <div>
+                                <div>الإطار المفاهيمي</div>
+                                <small style="font-size: 12px; opacity: 0.7;">OTC كنواة للرعاية الذاتية</small>
+                            </div>
+                            <i class="fas fa-plus-square"></i>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#section2" class="nav-link">
+                            <div class="nav-number">2</div>
+                            <div>
+                                <div>التنظيم والرقابة</div>
+                                <small style="font-size: 12px; opacity: 0.7;">المعايير القانونية للتصنيف</small>
+                            </div>
+                            <i class="fas fa-balance-scale-right"></i>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#section3" class="nav-link">
+                            <div class="nav-number">3</div>
+                            <div>
+                                <div>التحليل السريري</div>
+                                <small style="font-size: 12px; opacity: 0.7;">الأعراض، الفئات، وآلية العمل</small>
+                            </div>
+                            <i class="fas fa-microscope"></i>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#section4" class="nav-link">
+                            <div class="nav-number">4</div>
+                            <div>
+                                <div>فن اتخاذ القرار</div>
+                                <small style="font-size: 12px; opacity: 0.7;">متى يجب التحويل للطبيب</small>
+                            </div>
+                            <i class="fas fa-triangle-exclamation"></i>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#section5" class="nav-link">
+                            <div class="nav-number">5</div>
+                            <div>
+                                <div>مخاطر الاستخدام</div>
+                                <small style="font-size: 12px; opacity: 0.7;">الجرعة المزدوجة والرقابة الصيدلية</small>
+                            </div>
+                            <i class="fas fa-biohazard"></i>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#section6" class="nav-link">
+                            <div class="nav-number">6</div>
+                            <div>
+                                <div>الخلاصة والاستنتاج</div>
+                                <small style="font-size: 12px; opacity: 0.7;">ملخص الفوائد والتوصيات</small>
+                            </div>
+                            <i class="fas fa-lightbulb"></i>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#progress" class="nav-link">
+                            <div class="nav-number"><i class="fas fa-chart-line"></i></div>
+                            <div>
+                                <div>تتبع التقدم</div>
+                                <small style="font-size: 12px; opacity: 0.7;">مراجعة الفهم</small>
+                            </div>
+                            <i class="fas fa-tasks"></i>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div style="margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="font-size: 14px; color: #95a5a6; margin-bottom: 15px;">سرعة الوصول</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <a href="#" style="background: rgba(52, 152, 219, 0.2); color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 13px; display: inline-flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-print"></i> طباعة
+                        </a>
+                        <a href="#" style="background: rgba(46, 204, 113, 0.2); color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 13px; display: inline-flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-download"></i> تحميل PDF
+                        </a>
+                        <a href="#" style="background: rgba(155, 89, 182, 0.2); color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 13px; display: inline-flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-question-circle"></i> مساعدة
+                        </a>
+                    </div>
+                </div>
+            </aside>
+            
+            <main class="main-content">
+                <section id="section1" class="section" style="--section-color: #27ae60;">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-plus-square"></i>
+                        </div>
+                        <div>
+                            <h2 class="section-title">1. الإطار المفاهيمي: OTC كنواة للرعاية الذاتية</h2>
+                            <p class="section-subtitle">(التعريف والأهمية الإستراتيجية والتصنيفات)</p>
+                        </div>
+                    </div>
+                    
+                    <p>
+                        تُعرف الأدوية التي تُصرف بدون وصفة طبية (Over-The-Counter - OTC) بأنها المستحضرات الصيدلانية التي لا تتطلب وصفة طبية لشرائها واستخدامها. وهي تمثل حجر الزاوية في الرعاية الذاتية (Self-Care)، حيث تُمكّن الأفراد من الإدارة الذاتية الفعالة للأعراض والأمراض البسيطة والمُعتادة.
+                    </p>
+                    
+                    <div class="responsive-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th width="30%">أهمية أدوية OTC</th>
+                                    <th width="70%">الوصف</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong><i class="fas fa-hand-holding-medical"></i> تخفيف الأعباء</strong></td>
+                                    <td>تقليل الضغط على نظام الرعاية الصحية وتوفير تكاليف زيارات الأطباء للحالات البسيطة.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><i class="fas fa-truck-fast"></i> سهولة الوصول</strong></td>
+                                    <td>توفير علاج فوري وسريع للأعراض المفاجئة.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><i class="fas fa-brain"></i> التمكين الصحي</strong></td>
+                                    <td>زيادة وعي المستهلك وقدرته على اتخاذ القرارات الصحية الأساسية.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="info-box">
+                        <div class="box-icon" style="color: #3498db;">
+                            <i class="fas fa-list-ol"></i>
+                        </div>
+                        <div>
+                            <strong>تصنيفات الأدوية حسب طريقة الصرف:</strong>
+                            <ul style="list-style: none; padding-right: 0; margin-top: 10px;">
+                                <li style="margin-bottom: 5px;"><i class="fas fa-prescription" style="color: #e74c3c;"></i> <strong>الأدوية بوصفة طبية (Rx):</strong> تتطلب إشرافاً طبياً نظراً لخطورتها أو تعقيد استخدامها.</li>
+                                <li style="margin-bottom: 5px;"><i class="fas fa-shopping-basket" style="color: #27ae60;"></i> <strong>الأدوية بدون وصفة (OTC):</strong> متاحة للجمهور نظراً لسلامتها العالية وسهولة تشخيص استخدامها.</li>
+                                <li style="margin-bottom: 5px;"><i class="fas fa-user-tag" style="color: #f39c12;"></i> <strong>أدوية بإشراف صيدلي:</strong> فئة وسيطة تتطلب تدخل الصيدلي لتقييم الحاجة أو لتتبع عملية الصرف.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="section2" class="section" style="--section-color: #f39c12;">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-balance-scale-right"></i>
+                        </div>
+                        <div>
+                            <h2 class="section-title">2. التنظيم والرقابة: المعايير القانونية لتصنيف الدواء OTC</h2>
+                            <p class="section-subtitle">(معايير التحويل والتصنيف لضمان أمان الاستخدام)</p>
+                        </div>
+                    </div>
+                    
+                    <p>تخضع أدوية OTC لرقابة صارمة من الهيئات الصحية لضمان سلامتها وفعاليتها. ويُصنف الدواء كـ OTC فقط إذا استوفى المعايير التي تضمن أمان الاستخدام دون إشراف طبي:</p>
+                    
+                    <div class="responsive-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th width="30%">المعيار الرئيسي</th>
+                                    <th width="70%">الشرح التفصيلي</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>1. هامش الأمان الواسع</strong></td>
+                                    <td>يجب أن تكون الجرعة العلاجية بعيدة جداً عن الجرعة السامة (Low Toxicity/High Safety Margin).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2. سهولة التشخيص الذاتي</strong></td>
+                                    <td>يجب أن تكون الحالة أو العرض قابلاً للتشخيص والإدارة من قبل عامة الجمهور.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3. ضعف احتمالية سوء الاستخدام</strong></td>
+                                    <td>يجب أن يكون الدواء خالياً أو منخفض الاحتمالية للتسبب في الإدمان أو الاستخدام الترويحي.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>4. وضوح الملصق</strong></td>
+                                    <td>يجب أن ينقل الملصق (Drug Label) كافة الإرشادات والتحذيرات بلغة بسيطة ومفهومة.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>5. عدم حجب أمراض خطيرة</strong></td>
+                                    <td>يجب ألا يؤدي استخدام الدواء المؤقت إلى إخفاء أو تأخير تشخيص مرض مزمن أو خطير كامن.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3 style="color: var(--dark); margin-top: 35px;">آليات الرقابة التنظيمية</h3>
+                    <div class="cards-grid">
+                        <div class="card" style="--card-color: #3498db;">
+                            <div class="card-icon">
+                                <i class="fas fa-scroll"></i>
+                            </div>
+                            <h3 class="card-title">نظام المونوجراف (Monograph)</h3>
+                            <p>يحدد الشروط العامة (المكونات، الجرعات، الملصقات) لفئة كاملة من الأدوية (مثل مسكنات الألم)، مما يسرع عملية الموافقة على المنتجات المتوافقة.</p>
+                        </div>
+                        
+                        <div class="card" style="--card-color: #27ae60;">
+                            <div class="card-icon">
+                                <i class="fas fa-list-check"></i>
+                            </div>
+                            <h3 class="card-title">قوائم الهيئات المحلية (مثل EDA)</h3>
+                            <p>تلتزم الهيئات الوطنية بإصدار قوائم محدثة للأدوية غير الوصفية لضبط عملية الصرف وتحديد المسؤوليات بين الصيدلي والمستهلك، حمايةً للمرضى.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="section3" class="section" style="--section-color: #3498db;">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div>
+                            <h2 class="section-title">3. التحليل السريري: الأعراض، الفئات، وآلية العمل</h2>
+                            <p class="section-subtitle">(ربط العرض السريري بالدواء وآلية عمله)</p>
+                        </div>
+                    </div>
+                    
+                    <p>تُغطي أدوية OTC مجموعة واسعة من الحالات. الجدول التالي يوضح التحليل السريري الأساسي:</p>
+                    
+                    <div class="responsive-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th width="25%">العرض السريري</th>
+                                    <th width="30%">الفئة الدوائية</th>
+                                    <th width="45%">آلية العمل (Mechanism of Action)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong><i class="fas fa-head-side-mask"></i> الألم والحمى</strong></td>
+                                    <td>مسكنات الألم وخافضات الحرارة</td>
+                                    <td><strong>الأسيتامينوفين:</strong> يعمل مركزياً على الدماغ لرفع عتبة الألم وتنظيم الحرارة. <strong>الإيبوبروفين:</strong> يثبط إنزيمات COX لتقليل الالتهاب والألم.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><i class="fas fa-spray-can"></i> نزلات البرد والاحتقان</strong></td>
+                                    <td>مزيلات الاحتقان ومضادات الهيستامين</td>
+                                    <td><strong>مزيلات الاحتقان:</strong> تضييق الأوعية الدموية الأنفية. <strong>مضادات الهيستامين:</strong> حجب مستقبلات H1 لتقليل الاستجابة التحسسية.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><i class="fas fa-stomach"></i> حرقة المعدة والارتجاع</strong></td>
+                                    <td>مضادات الحموضة/حاصرات H2</td>
+                                    <td><strong>مضادات الحموضة:</strong> معادلة فورية لحمض المعدة. <strong>حاصرات H2:</strong> تقليل إفراز الحمض على المدى القصير.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><i class="fas fa-toilet"></i> الإمساك العارض</strong></td>
+                                    <td>الملينات (Laxatives)</td>
+                                    <td>أنواع مختلفة تعمل على سحب الماء إلى الأمعاء، أو تليين البراز، أو تحفيز حركة الأمعاء.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <section id="section4" class="section" style="--section-color: #e74c3c;">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-triangle-exclamation"></i>
+                        </div>
+                        <div>
+                            <h2 class="section-title">4. فن اتخاذ القرار: متى يكفي العلاج الذاتي ومتى يجب التحويل؟</h2>
+                            <p class="section-subtitle">(إشارات الخطر (Red Flags) التي تستدعي التدخل الطبي)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <div class="box-icon" style="color: #27ae60;">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <strong>متى يكون العلاج الذاتي آمناً؟</strong>
+                            يكون العلاج الذاتي آمناً ومناسباً إذا كانت الأعراض: <strong>حادة ومؤقتة</strong> (لم تتجاوز 48-72 ساعة)، <strong>خفيفة إلى متوسطة</strong> (لا تعيق النشاط اليومي)، و<strong>تستجيب للعلاج</strong> (تحسن واضح بعد جرعة أو جرعتين من دواء OTC).
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: var(--dark); margin-top: 35px;">إشارات الخطر (Red Flags) للتحويل للطبيب 🛑</h3>
+                    <div class="danger-box">
+                        <div class="box-icon" style="color: #c0392b;">
+                            <i class="fas fa-skull-crossbones"></i>
+                        </div>
+                        <div>
+                            <strong>تنبيه الإحالة الطبية:</strong> يجب التوقف عن العلاج الذاتي والتوجه للطبيب فوراً في حال ظهور أي من هذه العلامات التي تشير إلى مرض خطير أو مزمن.
+                        </div>
+                    </div>
+                    
+                    <div class="responsive-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th width="25%">العرض الأساسي</th>
+                                    <th width="75%">إشارات الخطر التي تتطلب التدخل الطبي</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong><i class="fas fa-hand-holding-heart"></i> الألم</strong></td>
+                                    <td>ألم شديد ومفاجئ (غير مسبوق)، ألم في الصدر، ألم مستمر لأكثر من 10 أيام.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><i class="fas fa-temperature-high"></i> الحمى</strong></td>
+                                    <td>حمى تزيد عن 39.5°C، حمى تستمر لأكثر من 3 أيام، حمى مصحوبة بتصلب الرقبة أو طفح جلدي.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><i class="fas fa-intestine"></i> الجهاز الهضمي</strong></td>
+                                    <td>وجود دم في البراز أو القيء، قيء مستمر، اصفرار الجلد (اليرقان)، ألم شديد ومستمر في البطن.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><i class="fas fa-lungs"></i> الجهاز التنفسي</strong></td>
+                                    <td>ضيق شديد في التنفس أو صعوبته، سعال مصحوب ببلغم دموي.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><i class="fas fa-xmark"></i> فشل العلاج</strong></td>
+                                    <td>عدم تحسن الأعراض بعد 3 أيام من استخدام دواء OTC.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <section id="section5" class="section" style="--section-color: #9b59b6;">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-biohazard"></i>
+                        </div>
+                        <div>
+                            <h2 class="section-title">5. مخاطر الاستخدام المتقدمة والرقابة الصيدلية</h2>
+                            <p class="section-subtitle">(التفاعلات الدوائية وسوء الاستخدام والدور الصيدلي)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cards-grid">
+                        <div class="card" style="--card-color: #e74c3c;">
+                            <div class="card-icon">
+                                <i class="fas fa-box-open"></i>
+                            </div>
+                            <h3 class="card-title">خطر الجرعة المزدوجة</h3>
+                            <p>الخطأ الأكثر شيوعاً هو تناول منتجات متعددة تحتوي على نفس المادة الفعالة (مثل الأسيتامينوفين/Paracetamol) مما يؤدي إلى تسمم الكبد الحاد والفشل الكبدي.</p>
+                        </div>
+                        
+                        <div class="card" style="--card-color: #f39c12;">
+                            <div class="card-icon">
+                                <i class="fas fa-hand-holding-box"></i>
+                            </div>
+                            <h3 class="card-title">التفاعلات الدوائية</h3>
+                            <p>قد تتفاعل أدوية OTC (مثل مضادات الالتهاب NSAIDs) مع الأدوية الموصوفة (مثل أدوية الضغط) مما يزيد من خطر النزيف أو ارتفاع ضغط الدم.</p>
+                        </div>
+                        
+                        <div class="card" style="--card-color: #3498db;">
+                            <div class="card-icon">
+                                <i class="fas fa-user-lock"></i>
+                            </div>
+                            <h3 class="card-title">سوء الاستخدام (DXM)</h3>
+                            <p>بعض المكونات كـ "ديكستروميثورفان" (DXM) في أدوية السعال قد يُساء استخدامها بجرعات عالية لغرض غير علاجي، مما يتطلب رقابة صيدلية مباشرة.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box" style="margin-top: 30px; background: linear-gradient(135deg, #f0e6ff 0%, #f9f0ff 100%); border-right: 5px solid #9b59b6;">
+                        <div class="box-icon" style="color: #9b59b6;">
+                            <i class="fas fa-user-nurse"></i>
+                        </div>
+                        <div>
+                            <strong>الدور المحوري للصيدلي (حارس البوابة):</strong>
+                            الصيدلي هو الخبير الدوائي الأول. ويلعب دوراً حاسماً في: <strong>التثقيف الصحي</strong>، <strong>فرز الحالة (Triage)</strong> لتحديد الحاجة للطبيب، و<strong>مراجعة التاريخ الدوائي</strong> لفحص التداخلات المحتملة.
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="section6" class="section" style="--section-color: #27ae60;">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <h2 class="section-title">6. الخلاصة والاستنتاج</h2>
+                            <p class="section-subtitle">(الاستخدام الرشيد لأدوية OTC والتوصيات النهائية)</p>
+                        </div>
+                    </div>
+                    
+                    <p>تُعد الأدوية التي تُصرف بدون وصفة طبية دعامة أساسية للرعاية الصحية، حيث توفر التوازن بين سهولة الوصول وضرورة الأمان. يعتمد الاستخدام الرشيد والفعال لهذه الأدوية على وعي المستهلك بالتعليمات المدونة على الملصق، وتجنب الجرعات المزدوجة، واعتبار الصيدلي شريكاً أساسياً في عملية اتخاذ قرار العلاج الذاتي.</p>
+                    
+                    <div class="checklist">
+                        <h3 class="checklist-title">
+                            <i class="fas fa-clipboard-check"></i>
+                            قائمة تلخيصية للاستخدام الرشيد لـ OTC
+                        </h3>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="concl1">
+                            <label for="concl1">
+                                <strong>قراءة الملصق بالكامل:</strong> قبل تناول أي دواء OTC، يجب قراءة الملصق بعناية لفهم الجرعة القصوى والتفاعلات المحتملة.
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="concl2">
+                            <label for="concl2">
+                                <strong>فحص المكونات النشطة:</strong> تجنب تناول منتجات مختلفة تحتوي على نفس المادة الفعالة لتجنب تجاوز الجرعة الآمنة (مثل الأسيتامينوفين).
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="concl3">
+                            <label for="concl3">
+                                <strong>استشارة الصيدلي أولاً:</strong> عند وجود أمراض مزمنة أو تناول أدوية موصوفة أخرى، يجب استشارة الصيدلي لفحص التداخلات.
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="concl4">
+                            <label for="concl4">
+                                <strong>الالتزام بفترة العلاج المحددة:</strong> لا يجب استخدام دواء OTC لفترة تتجاوز 7 أيام دون استشارة طبية، خاصة للمسكنات.
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="concl5">
+                            <label for="concl5">
+                                <strong>مراقبة إشارات الخطر:</strong> إذا لم تتحسن الأعراض أو ظهرت إشارات خطر (Red Flags)، يجب التوقف فوراً والتحويل للطبيب.
+                            </label>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="progress" class="section" style="--section-color: #3498db;">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h2 class="section-title">تتبع التقدم ومراجعة الفهم</h2>
+                            <p class="section-subtitle">(تقييم مدى استيعابك للمحتوى وإتقانك للمفاهيم)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>مدى فهمك لمفاهيم الأدوية التي تُصرف بدون وصفة طبية</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 40px;">
+                        <h3 style="color: #2c3e50; margin-bottom: 20px;">اختبار سريع للفهم</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                            <button onclick="checkAnswer(1)" style="background: #3498db; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: var(--transition);">
+                                <i class="fas fa-question"></i> سؤال 1: معايير OTC
+                            </button>
+                            <button onclick="checkAnswer(2)" style="background: #e74c3c; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: var(--transition);">
+                                <i class="fas fa-question"></i> سؤال 2: تسمم الكبد
+                            </button>
+                            <button onclick="checkAnswer(3)" style="background: #27ae60; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: var(--transition);">
+                                <i class="fas fa-question"></i> سؤال 3: إشارات الخطر
+                            </button>
+                        </div>
+                        
+                        <div id="quizResult" style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; display: none;">
+                            </div>
+                    </div>
+                </section>
+            </main>
+  
